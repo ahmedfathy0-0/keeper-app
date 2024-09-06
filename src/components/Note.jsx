@@ -1,12 +1,20 @@
 import React from 'react';
+import notes from '../note';
+
+
 
 function Note() {
 
     return (
-    <div className="note">
-        <h1>This is the title</h1>
-        <p>This is the content</p>
-    </div>);
+        <div>
+            {notes.map(note => (
+                <div key={note.key} className="note">
+                    <h1>{note.title}</h1>
+                    <p>{note.content}</p>
+                </div>
+            ))}
+        </div>
+    );
 }
 
 export default Note;
